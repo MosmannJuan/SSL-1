@@ -1,0 +1,4 @@
+[ 00-CHelloWorld]$ ./a.out
+Hello, World!
+Pratica #0
+[ 00-CHelloWorld]$ 
