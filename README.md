@@ -1,1 +1,1 @@
-# PRÁCTICA #0 - 'Hello, World!' en C.
+# Prácticas de Sintáxis y semántica de los lenguajes - K2051
