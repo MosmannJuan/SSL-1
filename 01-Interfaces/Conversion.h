@@ -8,7 +8,7 @@ ejecución.
 */
 
 double celsius(double);
-double farenheit(double);
+double fahrenheit(double);
 void printTablas(char, float, float, float);
 
 #endif

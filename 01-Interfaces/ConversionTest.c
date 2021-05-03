@@ -4,8 +4,8 @@
 
 int main(void) {
 
-    assert(farenheit(0)  == 32);
-    assert(farenheit(0)  != 25);
+    assert(fahrenheit(0)  == 32);
+    assert(fahrenheit(0)  != 25);
 
     //Pruebas de conversion a celsius
     assert(celsius(32)  == 0);
