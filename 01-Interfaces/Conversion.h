@@ -6,10 +6,13 @@ la ejecución del programa
 Declaramos el tipo de variable const, indicando que su valor no va a cambiar en tiempo de 
 ejecución.
 */
+//pragma ONCE para solo llamar una vez al header.
 
 double celsius(double);
 double fahrenheit(double);
 void printTablas(char, float, float, float);
+
+// void PrintTabla(double * (double), int, int);
 
 #endif
 
