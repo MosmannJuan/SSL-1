@@ -1,0 +1,11 @@
+contadores: contadores.o contadorSwitch.o contadorWhile.o
+	gcc -o contadores contadores.o contadorSwitch.o contadorWhile.o -std=c99
+
+contadorSwitch.o: contadorSwitch.c contadores.h
+	gcc -c contadorSwitch.c
+
+contadorWhile.o: contadorWhile.c contadores.h
+	gcc -c contadorWhile.c
+
+contadores.o: contadores.c contadores.h
+	gcc -c contadores.c
