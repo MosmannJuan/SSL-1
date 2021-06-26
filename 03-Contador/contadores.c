@@ -6,7 +6,7 @@ void menu() {
     printf("Seleccione que contador desea usar: \n");
     printf("a - Contador con while \n");
     printf("b - Contador con switch \n");
-    printf("c - Contador con \n");
+    printf("c - Contador con goto\n");
     printf("Presione ESC para finalizar \n");
     printf("\n");
 }
@@ -27,6 +27,12 @@ int main() {
          case 'b':
             system("clear");
             printf("Escriba caracteres y luego presione escape para finalizar... \n");
+            system("clear");
+         break;
+         case 'c':
+            system("clear");
+            printf("Escriba caracteres y luego presione escape para finalizar... \n");
+            contadorGoto();
             system("clear");
          break;
       }
