@@ -4,3 +4,4 @@ contadorWhile.o
 contadorSwitch.o
 longitudesSwitch.txt
 longitudesWhile.txt
+longitudesGoto.txt
