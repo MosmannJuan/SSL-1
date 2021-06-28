@@ -10,7 +10,7 @@ void contadorSwitch () {
     almacen = fopen ("longitudesSwitch.txt","w+");
 
     posicion = IN;
-    while(  (int)( caracter = getchar() )!= 27  ) {
+    while(  ( caracter = getchar() )!= EOF  ) {
     switch(caracter) {
         case '\n':
         case ' ':

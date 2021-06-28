@@ -11,7 +11,7 @@ void contadorWhile () {
 
         posicion = IN;
         //Lee caracteres mientras no encuentra el EOF
-        while(  (int)( caracter = getchar() )!= 27  ) {
+        while(  ( caracter = getchar() )!= EOF  ) {
         if (caracter == ' ' || caracter == '\n' || caracter == '\r') {
                 posicion = OUT;
         } else {
