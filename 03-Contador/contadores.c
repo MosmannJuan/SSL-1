@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "contadores.h"
+#include "histograma.h"
 
 void menu() {
     printf("Seleccione que contador desea usar: \n");
@@ -14,31 +15,30 @@ void menu() {
 
 int main() {
    int opcion;
+   char *nombreArchivo = "";
    menu();
    opcion = getchar();
-   while((int)opcion != 27) {
       switch (opcion) {
          case 'a':
-            system("clear");
-            printf("Escriba caracteres y luego presione escape para finalizar... \n");
+            system("cls");
+            printf("Escriba caracteres y luego presione ctrl + z para finalizar... \n");
             contadorWhile();
-            system("clear");
+            nombreArchivo = "longitudesWhile.txt";
+            histograma(nombreArchivo);
          break;
          case 'b':
-            system("clear");
-            printf("Escriba caracteres y luego presione escape para finalizar... \n");
-            system("clear");
+            system("cls");
+            printf("Escriba caracteres y luego presione ctrl + z para finalizar... \n");
+            contadorSwitch();
+            nombreArchivo = "longitudesSwitch.txt";
+            histograma(nombreArchivo);
          break;
          case 'c':
-            system("clear");
-            printf("Escriba caracteres y luego presione escape para finalizar... \n");
             contadorGoto();
-            system("clear");
+            nombreArchivo = "longitudesGoto.txt";
+            histograma(nombreArchivo);
          break;
       }
-      menu();
-      opcion = getchar();
-   }
 
    return 0;
 }

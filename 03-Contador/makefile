@@ -1,5 +1,5 @@
-contadores: contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o
-	gcc -o contadores contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o -std=c99
+contadores: contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o histograma.o
+	gcc -o contadores contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o histograma.o -std=c99
 
 contadorSwitch.o: contadorSwitch.c contadores.h
 	gcc -c contadorSwitch.c
@@ -12,3 +12,6 @@ contadores.o: contadores.c contadores.h
 
 contadorGoto.o: contadorGoto.c contadores.h
 	gcc -c contadorGoto.c
+
+histograma.o: histograma.c histograma.h
+	gcc -c histograma.c
