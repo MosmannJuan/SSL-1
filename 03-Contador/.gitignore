@@ -1,9 +1,7 @@
-contadores.o
-contadores
-contadorWhile.o
-contadorSwitch.o
-contadorGoto.o
+Graficador.o
+histograma-1-enum-switch.o
+histograma-2-goto.o
+histograma-4-while.o
+main.o
 histograma.o
-longitudesSwitch.txt
-longitudesWhile.txt
-longitudesGoto.txt
+histograma

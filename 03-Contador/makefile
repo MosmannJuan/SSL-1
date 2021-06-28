@@ -1,17 +1,17 @@
-contadores: contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o histograma.o
-	gcc -o contadores contadores.o contadorSwitch.o contadorWhile.o contadorGoto.o histograma.o -std=c99
+histograma: main.o histograma-1-enum-switch.o histograma-4-while.o histograma-2-goto.o Graficador.o
+	gcc -o histograma main.o histograma-1-enum-switch.o histograma-4-while.o histograma-2-goto.o Graficador.o -std=c99
 
-contadorSwitch.o: contadorSwitch.c contadores.h
-	gcc -c contadorSwitch.c
+histograma-1-enum-switch.o: histograma-1-enum-switch.c Graficador.h Graficador.h
+	gcc -c histograma-1-enum-switch.c
 
-contadorWhile.o: contadorWhile.c contadores.h
-	gcc -c contadorWhile.c
+histograma-4-while.o: histograma-4-while.c Graficador.h Graficador.h
+	gcc -c histograma-4-while.c
 
-contadores.o: contadores.c contadores.h
-	gcc -c contadores.c
+main.o: main.c Graficador.h
+	gcc -c main.c
 
-contadorGoto.o: contadorGoto.c contadores.h
-	gcc -c contadorGoto.c
+histograma-2-goto.o: histograma-2-goto.c Graficador.h Graficador.h
+	gcc -c histograma-2-goto.c
 
-histograma.o: histograma.c histograma.h
-	gcc -c histograma.c
+Graficador.o: Graficador.c Graficador.h
+	gcc -c Graficador.c

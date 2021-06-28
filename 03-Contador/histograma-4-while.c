@@ -1,16 +1,13 @@
-#include "contadores.h"
+#include "histograma.h"
 #include <stdio.h>
-
-#define IN  1
-#define OUT  0
+#include "Graficador.h"
 
 void contadorWhile () {
-        int caracter, longitud = 0, posicion;
-        FILE* almacen;
-        almacen = fopen ("longitudesWhile.txt","w+");
+        int caracter, longitud = 0;
+        STATE posicion;
+        int longitudes[SIZE] = {0};
 
         posicion = IN;
-        //Lee caracteres mientras no encuentra el EOF
         while(  ( caracter = getchar() )!= EOF  ) {
         if (caracter == ' ' || caracter == '\n' || caracter == '\r') {
                 posicion = OUT;
@@ -19,10 +16,10 @@ void contadorWhile () {
                 }
         if (posicion == OUT) {
                 posicion = IN;
-                fprintf(almacen,"%d \n",longitud);
+                ++longitudes[longitud];
                 longitud = 0;
                 }
         }
-        fclose(almacen);
+        histograma(longitudes, SIZE);
 }
 
