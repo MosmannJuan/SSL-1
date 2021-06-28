@@ -20,20 +20,21 @@ int main() {
    opcion = getchar();
       switch (opcion) {
          case 'a':
-            system("cls");
-            printf("Escriba caracteres y luego presione ctrl + z para finalizar... \n");
+            system("clear");
+            printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorWhile();
             nombreArchivo = "longitudesWhile.txt";
             histograma(nombreArchivo);
          break;
          case 'b':
-            system("cls");
-            printf("Escriba caracteres y luego presione ctrl + z para finalizar... \n");
+            system("clear");
+            printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorSwitch();
             nombreArchivo = "longitudesSwitch.txt";
             histograma(nombreArchivo);
          break;
          case 'c':
+            system("clear");
             contadorGoto();
             nombreArchivo = "longitudesGoto.txt";
             histograma(nombreArchivo);

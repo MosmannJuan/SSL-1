@@ -2,6 +2,8 @@ contadores.o
 contadores
 contadorWhile.o
 contadorSwitch.o
+contadorGoto.o
+histograma.o
 longitudesSwitch.txt
 longitudesWhile.txt
 longitudesGoto.txt
