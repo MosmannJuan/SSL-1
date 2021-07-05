@@ -1,12 +1,7 @@
-#ifndef CONTADORES_H_INCLUDED
+#ifndef HISTOGRAMA_H_INCLUDED
+#define HISTOGRAMA_H_INCLUDED; 
 
-typedef enum {
-        IN = 1,
-        OUT = 0,
-        SIZE = 100
-} STATE;
-
-static const int CONTADORES_H_INCLUDED; 
+const int SIZE = 100;
 
 void contadorSwitch(void);
 void contadorWhile(void);
