@@ -3,7 +3,7 @@
 #include "Graficador.h"
 
 void contadorGoto(){
-    int caracter, longitud = 0, posicion, stopper = 0;
+    int caracter, longitud = 0, stopper = 0;
     int longitudes[SIZE] = {0};
     
     IN:
@@ -14,7 +14,7 @@ void contadorGoto(){
             histograma(longitudes, SIZE);
         }
     }
-    else if (caracter == ' ' || caracter == '\n' || caracter == '\r') 
+    else if (caracter == ' ' || caracter == '\n' || caracter == '\t') 
         goto OUT;
     else {
         ++longitud;

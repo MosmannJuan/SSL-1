@@ -2,20 +2,25 @@
 #include <stdio.h>
 #include "Graficador.h"
 
+typedef enum {
+        IN = 1,
+        OUT = 0
+} STATE;
+
 void contadorWhile () {
         int caracter, longitud = 0;
-        STATE posicion;
+        STATE estado;
         int longitudes[SIZE] = {0};
 
-        posicion = IN;
+        estado = IN;
         while(  ( caracter = getchar() )!= EOF  ) {
         if (caracter == ' ' || caracter == '\n' || caracter == '\r') {
-                posicion = OUT;
+                estado = OUT;
         } else {
                 ++longitud;
                 }
-        if (posicion == OUT) {
-                posicion = IN;
+        if (estado == OUT) {
+                estado = IN;
                 ++longitudes[longitud];
                 longitud = 0;
                 }
