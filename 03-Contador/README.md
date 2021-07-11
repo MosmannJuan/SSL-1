@@ -84,3 +84,7 @@ conocer del graficador y viceversa.
  - 1.c:
 ------------
  ![1-c](https://user-images.githubusercontent.com/63465251/125211957-7ade1c80-e280-11eb-8438-6e033f6a7fac.jpeg)
+ 
+ 
+ - 3.d:
+ La implementación desarrollada representa los estados los cuales son pasados como argumento de una función y las trancisiones están representadas mediante la validación del estado recibido como argumento.
