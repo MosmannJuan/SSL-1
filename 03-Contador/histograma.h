@@ -1,10 +1,13 @@
 #ifndef HISTOGRAMA_H_INCLUDED
-#define HISTOGRAMA_H_INCLUDED; 
+#define HISTOGRAMA_H_INCLUDED;
 
-const int SIZE = 100;
+struct ArregloDeLongitudes {
+      int longitudes[100];
+   };
 
-void contadorSwitch(void);
-void contadorWhile(void);
-void contadorGoto(void);
+void contadorSwitch(struct ArregloDeLongitudes *);
+void contadorGoto(struct ArregloDeLongitudes *);
+void contadorRecursivo(struct ArregloDeLongitudes *);
+void contadorPorParametro(struct ArregloDeLongitudes*, int, int, int);
 
 #endif
