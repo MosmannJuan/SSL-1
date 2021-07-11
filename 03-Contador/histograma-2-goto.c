@@ -1,30 +1,32 @@
 #include "histograma.h"
 #include <stdio.h>
-#include "Graficador.h"
 
-void contadorGoto(){
-    int caracter, longitud = 0, stopper = 0;
-    int longitudes[SIZE] = {0};
+void contadorGoto(struct ArregloDeLongitudes* arreglo){
+    int caracter, longitud = 0;
     
+    OUT:
+        caracter = getchar();
+        if (caracter == ' ' || caracter == '\n' || caracter == '\t') {
+        goto OUT;
+    }
+        ++longitud;
+        goto IN;
+
     IN:
     caracter = getchar();
     if(caracter == EOF) {
-        if (stopper == 0) {
-            stopper = 1;
-            histograma(longitudes, SIZE);
-        }
+        if (ferror(stdin) && longitud > 0) 
+            ++(arreglo -> longitudes[longitud]);
+    return; 
     }
-    else if (caracter == ' ' || caracter == '\n' || caracter == '\t') 
+    else if (caracter == ' ' || caracter == '\n' || caracter == '\t') {
+        ++(arreglo -> longitudes[longitud]);
+        longitud = 0;
         goto OUT;
+    }
     else {
         ++longitud;
         goto IN;        
     }
-                
-    OUT:
-        ++longitudes[longitud];
-        longitud = 0;
-        goto IN;
-   
 }
 
