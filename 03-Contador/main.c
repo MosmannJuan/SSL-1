@@ -14,32 +14,31 @@ void menu() {
 
 int main() {
 
-   struct ArregloDeLongitudes arreglo = {
+   ArregloDeLongitudes arreglo = {
       {0}
    };
-  const int SIZE = sizeof(struct ArregloDeLongitudes) / sizeof(int);
 
    menu();
       switch (getchar()) {
          case 'a':
             printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorRecursivo(&arreglo);
-            histograma(arreglo.longitudes, SIZE);
+            histograma(arreglo.longitudes, sizeof(ArregloDeLongitudes) / sizeof(int));
          break;
          case 'b':
             printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorSwitch(&arreglo);
-            histograma(arreglo.longitudes, SIZE);
+            histograma(arreglo.longitudes, sizeof(ArregloDeLongitudes) / sizeof(int));
          break;
          case 'c':
             printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorGoto(&arreglo);
-            histograma(arreglo.longitudes, SIZE);
+            histograma(arreglo.longitudes, sizeof(ArregloDeLongitudes) / sizeof(int));
          break;
          case 'd':
             printf("Escriba caracteres y luego presione ctrl + z (Win.) o ctrl + d (Unix) para finalizar... \n");
             contadorPorParametro(&arreglo, getchar(), 0, 0);
-            histograma(arreglo.longitudes, SIZE);
+            histograma(arreglo.longitudes, sizeof(ArregloDeLongitudes) / sizeof(int));
          break;
       }
 

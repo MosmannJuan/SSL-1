@@ -4,6 +4,6 @@ digraph MAQUINA_DE_ESTADO {
     node [style=filled];
     IN -> "-OUT" [label = "E.O.C  \n ++longitudes[longitud] \n longitud = 0"];
     "-OUT" -> IN [label = "E.O.C  \n longitud++"];
-    IN -> IN [label = "c != /n, \n c != '', \n c != /t \n longitud++"];
-    "-OUT" -> "-OUT" [label = "c == /n, \n c == '', \n c == /t"];
+    IN -> IN [label = "c ≠ /n \n ^ \n ≠ ' ' \n ^ \n ≠ /t \n longitud++"];
+    "-OUT" -> "-OUT" [label = "c = /n \n ∨ \n = ' ' \n ∨ \n = /t"];
 }

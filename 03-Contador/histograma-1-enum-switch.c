@@ -1,16 +1,15 @@
-#include "histograma.h"
 #include <stdio.h>
+#include "histograma.h"
 
 typedef enum {
         IN = 1,
         OUT = 0
 } STATE;
 
-void contadorSwitch (struct ArregloDeLongitudes* arreglo) {
+void contadorSwitch (ArregloDeLongitudes* arreglo) {
     int caracter, longitud = 0;
-    STATE s;
+    STATE s = OUT;
 
-    s = OUT;
     while((caracter = getchar()) != EOF) {
         switch(s){
             case OUT:
@@ -18,7 +17,7 @@ void contadorSwitch (struct ArregloDeLongitudes* arreglo) {
                 case '\n':
                 case '\t':
                 case ' ':
-                   ++(arreglo -> longitudes[longitud]);
+                   ++arreglo->longitudes[longitud];
                 break;
                 default:
                     s = IN;
@@ -33,7 +32,7 @@ void contadorSwitch (struct ArregloDeLongitudes* arreglo) {
                 case '\n':
                 case '\t':
                 case ' ':
-                        ++(arreglo -> longitudes[longitud]);
+                        ++arreglo->longitudes[longitud];
                         longitud = 0;
                         s = OUT;
                 break;
@@ -45,9 +44,7 @@ void contadorSwitch (struct ArregloDeLongitudes* arreglo) {
         }  
     
     }
-        if (ferror(stdin) && longitud > 0) {
-            ++(arreglo -> longitudes[longitud]);
-            return; 
-        }
+    if (ferror(stdin) && longitud > 0) 
+        ++arreglo->longitudes[longitud];
 }
 

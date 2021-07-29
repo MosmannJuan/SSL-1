@@ -73,18 +73,81 @@ conocer del graficador y viceversa.
 - Desde main.c se coordina todo.
 
 
-
-~~----------------------------------------------------------------~~~~-------------------------------~~
+~~--------------------------------------------------------------------------------~~
 
 
 ### Resolución
  - 1.b:
 ------------
-![1-b](https://user-images.githubusercontent.com/63465251/125211810-77966100-e27f-11eb-966a-4d2da9502852.jpeg)
+![1-b](https://user-images.githubusercontent.com/63361800/127400787-27fc9617-11b3-4e1e-840c-a13771b2185d.jpeg)
  - 1.c:
 ------------
  ![1-c](https://user-images.githubusercontent.com/63465251/125211957-7ade1c80-e280-11eb-8438-6e033f6a7fac.jpeg)
  
+~~--------------------------------------------------------------------------------~~
+ - 2.b:
+
+5-upla del autómata definido M = (Q, E, T, q0, F):
+
+Q = {OUT, IN} -> Conjunto de estados
+
+E = Todos los caracteres -> Alfabeto reconocido por el autómnata
+
+q0 = OUT -> Estado inicial
+
+F = {OUT, IN} -> Conjunto de estados finales
+
+T -> Función trancisión
+
+Para facilitar la definición de la función trancisión, definimos:
+Caracter de escape = {'\t', '\n', ' '}
+Caracter de palabra = Caracteres - {'\t', '\n', ' '}
+
+T = {OUT => Caracter de escape => OUT, OUT => Caracter de palabra => IN,  IN => Caracter de escape => OUT, IN => Caracter de palabra => IN}
+
+![2-b](https://user-images.githubusercontent.com/63361800/127403756-29f1977b-54f0-468c-8cd3-437e6d2375c9.jpeg)
+
+~~--------------------------------------------------------------------------------~~  
+ - 3.a:
+En la versión de K&R, se utiliza una versión con while:
+```c
+		#include <stdio.h>
+		main( )
+		{
+		int c, nl, nw, nc, state;
+		state = OUT;
+		nl = nw = nc = 0;
+		while ((c=getchar( ))!=EOF) {
+			++nc;
+			if (c=='\n')
+				++nl;
+			if (c==' ' || c=='\n' || c=='\r')
+				state = OUT;
+			else if (state==OUT) {
+				state = IN;
+				++nw;
+			}
+		}
+		printf ("%d %d %d\n", nl, nw, nc);
+		}
+```
+Una ventaja de esta implementación es que el código es más ordenado ya que ejecutamos el conjunto de sentencias, en este caso, según al estado en el que se encuentra la máquina y el tipo de caracter que recibe. Pero una principal desventaja, es que se pierde eficiencia debido a que se tienen que evaluar cada condición hasta que se pueda obtener el valor de verdad de la expresión y esto podría tomar más tiempo según la expresión contenida en cada if-else.
+Por otro lado, está la implementación realizada con la instrucción Switch. La ventaja que tiene esta instrucción es la de poder decidir a qué parte del código se quiere "saltar" (Switch realiza esto mediante etiquetas) y esto, a comparación del if, gana tiempo en eficiencia ya que no tiene que evaluar una condición sino que evalua un valor para decidir a qué etiqueta ir. Pero una desventaja que tiene, es que no se puede evaluar cualquier valor, sino que solo puede evaluar caracteres y valores enteros (A diferencia de If que puede evaluar enteros, caracteres, punteros, etc.).
+
+~~--------------------------------------------------------------------------------~~
+
+ - 3.b:
+ En lenguajes no tan modernos el GO TO tiene cierta utilidad como la de poder salir definitivamente de ciclos dentro de ciclos en lugar de poner una verificación y un break en cada una ellos.
+ Los lenguajes modernos no lo utilizan ya que las pocas aplicaciones que el GO TO ofrece en lenguajes modernos como java, por ejemplo, se pueden reemplazar por otras sentencias. En este caso por ejemplo con la sentencia "break n" siendo n el numero de ciclos de los cuales se quiere salir.
  
+~~--------------------------------------------------------------------------------~~
+ 
+ - 3.c:
+No es necesario que las funciones accedan todo el tiempo al contador. En nuestro caso, estamos pasando un puntero al contador y de esta manera nos estamos ahorrando el tener que pasar el contador completo. Esto nos permite ganar eficiencia al no tener que estar trasladando la estructura completa por todo el programa.
+
+~~--------------------------------------------------------------------------------~~
+
  - 3.d:
- La implementación desarrollada representa los estados los cuales son pasados como argumento de una función y las trancisiones están representadas mediante la validación del estado recibido como argumento.
+La implementación desarrollada fue realizada con recursividad, la cual representa los estados pasándolos como argumento de una función y las trancisiones son representadas mediante la validación del estado recibido como argumento. Podemos ver los estados en el call stack, ya que visualizamos allí cada estado.
+ 
+~~--------------------------------------------------------------------------------~~
