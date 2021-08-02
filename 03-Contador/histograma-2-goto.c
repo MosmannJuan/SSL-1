@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "histograma.h"
 
 void contadorGoto(ArregloDeLongitudes* arreglo){

@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #ifndef HISTOGRAMA_H_INCLUDED
 #define HISTOGRAMA_H_INCLUDED;
 

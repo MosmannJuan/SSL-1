@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "histograma.h"
 
 void OUT (int caracter, int longitud, ArregloDeLongitudes* arreglo) {
